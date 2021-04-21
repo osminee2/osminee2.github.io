@@ -19,3 +19,24 @@ li {
   font-family: Arial, sans-serif;
   font-size: 16px;
 }
+
+a {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+a:link {
+  color: lightblue;
+}
+
+a:visited {
+  color: mediumpurple;
+}
+
+a:hover {
+  color: turquoise;
+}
+
+a:active {
+  color: darkturquoise;
+}
