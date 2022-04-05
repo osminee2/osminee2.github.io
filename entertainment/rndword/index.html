@@ -2,9 +2,19 @@
 <!--Word list provided by GitHub user grahampcharles: https://github.com/dwyl/english-words/blob/master/words_dictionary.json-->
 <html>
   <head>
-    <script src="index.js"></script>
+    <script>
+      let words = require("./words_dictionary.json");
+      const words_p = JSON.parse(words);
+      // Copied from MDN
+      function randIntIncl(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      document.getElementById("pa").innerHTML = words_p[randIntIncl(0, pa.length)];
+    </script>
   </head>
   <body>
-    <p>placeholder</p>
+    <p id="pa">placeholder</p>
   </body>
 </html>
