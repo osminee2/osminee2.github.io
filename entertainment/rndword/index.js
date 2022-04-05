@@ -1,1 +1,1 @@
-let words = require("./words.json");
+let words = require("./words_dictionary.json");
