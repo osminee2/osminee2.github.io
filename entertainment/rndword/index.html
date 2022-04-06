@@ -2,6 +2,9 @@
 <!--Word list provided by GitHub user grahampcharles: https://github.com/dwyl/english-words/blob/master/words_dictionary.json-->
 <html>
   <head>
+  </head>
+  <body>
+    <p id="pa">placeholder</p>
     <script>
       var xmlhttp;
       xmlhttp=new XMLHttpRequest();
@@ -16,8 +19,5 @@
       }
       document.getElementById('pa').innerHTML = words_p[randIntIncl(0, words_p.length)];
     </script>
-  </head>
-  <body>
-    <p id="pa">placeholder</p>
   </body>
 </html>
