@@ -6,16 +6,16 @@
       function whenLoaded() {
         var xmlhttp;
         xmlhttp=new XMLHttpRequest();
-        xmlhttp.open('GET', "words_dictionary.json", false);
+        xmlhttp.open('GET', "words_alpha.txt", false);
         xmlhttp.send();
-        const words_p = JSON.parse(xmlhttp.responseText);
+        const words_l = xmlhttp.responseText.split('\n');
         // Copied from MDN
         function randIntIncl(min, max) {
           min = Math.ceil(min);
           max = Math.floor(max);
           return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        document.getElementById('pa').innerHTML = words_p[randIntIncl(0, words_p.length)];
+        document.getElementById('pa').innerHTML = words_l[randIntIncl(0, words_l.length)];
       }
     </script>
   </head>
