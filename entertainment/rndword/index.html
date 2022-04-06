@@ -5,8 +5,10 @@
     <script src="./../../require.js"></script>
     <script src="./../../text.js"></script>
     <script>
-      // Copied from https://dmitripavlutin.com/javascript-json-modules/
-      import words from './words_dictionary.json' assert { type: 'json' };
+      // Copied from https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
+      fetch("words_dictionary.json")
+      .then(response => response.json())
+      .then(json => console.log(json[1]));
       // const words_p = JSON.parse(words);
       // Copied from MDN
       function randIntIncl(min, max) {
@@ -14,7 +16,7 @@
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
-      document.getElementById('pa').innerHTML = words[randIntIncl(0, words.length)];
+      document.getElementById('pa').innerHTML = json[randIntIncl(0, json.length)];
     </script>
   </head>
   <body>
