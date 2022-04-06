@@ -9,7 +9,7 @@
         xmlhttp.open('GET', "words_alpha.txt", false);
         xmlhttp.send(); */
         // Copied from https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-        var words_l = fetch('https://osminee2.github.io/entertainment/rndword/words_alpha.txt').then(response => response.text()).then(data => data.split('\n');
+        var words_l = fetch('https://osminee2.github.io/entertainment/rndword/words_alpha.txt').then(response => response.text()).then(data => data.split('\n'));
         // const words_l = xmlhttp.responseText.split('\n');
         // Copied from MDN
         function randIntIncl(min, max) {
