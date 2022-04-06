@@ -2,14 +2,14 @@
 <!--Word list provided by GitHub user grahampcharles: https://github.com/dwyl/english-words/blob/master/words_dictionary.json-->
 <html>
   <head>
-    <script src="./../../require.js"></script>
-    <script src="./../../text.js"></script>
+    <!--script src="./../../require.js"-->
+    <!--script src="./../../text.js"-->
     <script>
       // Copied from https://stackoverflow.com/questions/19706046/how-to-read-an-external-local-json-file-in-javascript
-      fetch("words_dictionary.json")
+      fetch("https://osminee2.github.io/entertainment/rndword/words_dictionary.json")
       .then(response => response.json())
       .then(json => console.log(json[1]));
-      // const words_p = JSON.parse(words);
+      const words_p = JSON.parse(words);
       // Copied from MDN
       function randIntIncl(min, max) {
         min = Math.ceil(min);
