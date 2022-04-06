@@ -5,17 +5,16 @@
     <script src="./../../require.js"></script>
     <script src="./../../text.js"></script>
     <script>
-      let words = require(['text!./words_dictionary.json'], function (words) {
-        // According to requirejs.org, the word list is now loaded
-      });
-      const words_p = JSON.parse(words);
+      // Copied from https://dmitripavlutin.com/javascript-json-modules/
+      import words from './words_dictionary.json' assert { type: 'json' };
+      // const words_p = JSON.parse(words);
       // Copied from MDN
       function randIntIncl(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
-      document.getElementById('pa').innerHTML = words_p[randIntIncl(0, pa.length)];
+      document.getElementById('pa').innerHTML = words[randIntIncl(0, words.length)];
     </script>
   </head>
   <body>
