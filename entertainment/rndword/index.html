@@ -10,7 +10,7 @@
         xmlhttp.send(); */
         // Copied from https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
         var words_l;
-        var frequest = fetch('https://osminee2.github.io/entertainment/rndword/words_alpha.txt').then(response => response.text()).then(data => data.split('\n')).then(data => words_l = data);
+        fetch('https://osminee2.github.io/entertainment/rndword/words_alpha.txt').then(response => response.text()).then(data => data.split('\n')).then(data => words_l = data);
         console.log(words_l);
         // const words_l = xmlhttp.responseText.split('\n');
         // Copied from MDN
