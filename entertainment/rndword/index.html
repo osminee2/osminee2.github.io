@@ -2,22 +2,24 @@
 <!--Word list provided by GitHub user grahampcharles: https://github.com/dwyl/english-words/blob/master/words_dictionary.json-->
 <html>
   <head>
+    <script>
+      function whenLoaded() {
+        var xmlhttp;
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.open('GET', "words_dictionary.json", false);
+        xmlhttp.send();
+        const words_p = JSON.parse(xmlhttp.responseText);
+        // Copied from MDN
+        function randIntIncl(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        document.getElementById('pa').innerHTML = words_p[randIntIncl(0, words_p.length)];
+      }
+    </script>
   </head>
   <body>
-    <p id="pa">placeholder</p>
-    <script>
-      var xmlhttp;
-      xmlhttp=new XMLHttpRequest();
-      xmlhttp.open('GET', "words_dictionary.json", false);
-      xmlhttp.send();
-      const words_p = JSON.parse(xmlhttp.responseText);
-      // Copied from MDN
-      function randIntIncl(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-      document.getElementById('pa').innerHTML = words_p[randIntIncl(0, words_p.length)];
-    </script>
+    <p id="pa" onload="whenLoaded()">placeholder</p>
   </body>
 </html>
