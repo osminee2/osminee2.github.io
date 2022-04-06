@@ -3,8 +3,9 @@
 <html>
   <head>
     <script src="./../../require.js"></script>
+    <script src="./../../text.js"></script>
     <script>
-      let words = require(['./words_dictionary.json'], function (words) {
+      let words = require(['text!./words_dictionary.json'], function (words) {
         // According to requirejs.org, the word list is now loaded
       });
       const words_p = JSON.parse(words);
